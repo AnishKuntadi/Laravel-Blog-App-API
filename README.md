@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+**Laravel Blog App API**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A RESTful API built with Laravel, providing functionalities for user
+authentication, blog post management, and commenting system.
 
-## About Laravel
+# Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **User Authentication**: Register, login, and logout functionalities
+    using JWT.​
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Blog Posts**: Create, read, update, and delete blog posts.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Comments**: Add comments and replies to blog posts.​
 
-## Learning Laravel
+-   **User Profile**: Retrieve authenticated user information.​
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Requirements
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **PHP** 8.1
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   **Laravel**: 10.x​
 
-## Laravel Sponsors
+-   **Database**: MySQL
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Installation
 
-### Premium Partners
+-   # Project creation using composer : Composer create-projet laravel/laravel blog-app
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   # Enivorment Setup : php artisan key:generate
 
-## Contributing
+-   # Database Configuration in .env file
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   # Run migration : php artisan migrate
 
-## Code of Conduct
+-   # Run Server : php artisan serve
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Authentication
 
-## Security Vulnerabilities
+This API uses JWT for authentication. After registering or logging in,
+you\'ll receive an access_token. Include this token in the Authorization
+header for protected routes:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# API Endpoints
 
-## License
+# Authentication
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   **Register**: POST /api/auth/register
+
+-   **Login**: POST /api/auth/login
+
+-   **Logout**: POST /api/auth/logout *(Requires Authorization)*
+
+-   **User Profile**: GET /api/profile *(Requires Authorization)*
+
+# Posts
+
+-   **Create Post**: POST /api/posts *(Requires Authorization)*
+
+-   **Get All Posts**: GET /api/posts
+
+-   **Get Single Post**: GET /api/posts/{id}
+
+-   **Update Post**: PUT /api/posts/{id} *(Requires Authorization)*
+
+-   **Delete Post**: DELETE /api/posts/{id} *(Requires Authorization)*
+
+# Comments
+
+-   **Add Comment**: POST /api/posts/{post_id}/comments *(Requires
+    Authorization)*
+
+-   **Reply to Comment**: POST /api/comments/{comment_id}/reply
+    *(Requires Authorization)*
+
+-   **Get Comments for Post**: GET /api/posts/{post_id}/comments
+
+# Postman Collection
+
+A Postman collection is available to test all API endpoints.​
+
+1.  **Import the collection**:
+
+    -   Open Postman.​
+
+    -   Click on Import.​
+
+    -   Choose the Laravel Blog API.postman_collection.json file from
+        the project root.
+
+2.  **Set up Environment (Optional)**:
+
+    -   Create a new environment in Postman.​
+
+    -   Add a variable base_url with value http://127.0.0.1:8000/api.​
+
+    -   Use {{base_url}} in the request URLs.
+
+# Contact
+
+For any inquiries or feedback, please contact *aniskuntadi@gmail.com*
+
+# 
+
+# 
+
+#  
